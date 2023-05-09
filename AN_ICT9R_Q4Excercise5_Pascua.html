@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bruno+Ace&family=Orbitron&family=Permanent+Marker&display=swap" rel="stylesheet">
+	<title>Q4 Excercise 5</title>
+	<style type="text/css">
+
+	     #figure1,#figure2{
+	     	width: 500px;
+
+	     }
+        img{
+        	width: 150px;
+        }
+        h2{
+        	font-family: Orbitron;
+        	color: #AD880C;
+        }
+        p{
+        	font-family: Permanent Marker;
+        	color: #F1C327;
+        }
+        h1{
+        	font-family: Bebas Neue;
+        	color: #FBE69D;
+        }
+        body{
+	      background: url( https://i.pinimg.com/564x/7e/98/df/7e98dfc30ff1e23804d0124b4e6c29c8.jpg );
+        }
+
+	</style>
+</head>
+<body>
+	<h1>The Ohm's Law Equation</h1>
+	<p>There is a mathematical relationship which links current, voltage and resistance. A German scientist named Georg Ohm performed many experiments in an effort to show a link between the three. In the days when he was performing his experiments there were no meters as we know them today.</p>
+
+	 <img src="https://www.electronics-notes.com/images/ohms-law-triangle-02.svg"><br>
+
+	<p>
+       	To use the triangle cover up the unknown quantity and then and then calculate it from the other two. If they are in line they are multiplied, but if one is on top of the other then they should be divided. In other words if current has to be calculated the voltage is divided by the resistance i.e. V/R and so forth.
+       </p>
+
+	<img src="https://www.electronics-notes.com/images/ohms-law-calculation-example-01.svg">
+
+
+	<p>
+       	n this second example, we will calculate the amount of resistance (R) in a circuit, given values of voltage (E) and current (I):
+       </p>
+      
+
+	<div class="row">
+		<div class="col-6">
+			Enter Voltage (E): <input type="text" id="V" class="form-control">
+			Enter Resistance(R): <input type="text" id="R"class="form-control"><br>
+			<input type="Submit" value="COMPUTE" class="btn btn-secondary" onclick="Calculate()">
+			<p id="OUTPUT"></p>
+		</div>
+		<div class="col-6 mt-5">
+			<img src="https://www.allaboutcircuits.com/uploads/articles/current-flow-voltage-battery.jpg" id='figure2' >
+		</div>
+
+
+
+</div>
+<audio id="audio1" src="electric-hum.mp3"></audio>
+
+<h2>What makes a light bulb light up?</h2>
+
+<p>When a light bulb connects to an electrical power supply, an electrical current flows from one metal contact to the other. As the current travels through the wires and the filament, the filament heats up to the point where it begins to emit photons, which are small packets of visible light</p>
+
+
+<button class="btn btn-success" onmouseover="On()" onmouseout="Off()">TURN ON LIGHT</button>
+<img src="turnoff.png" id="bulb">
+
+
+<script type="text/javascript">
+	function Calculate(){
+		let V = document.getElementById('V').value;
+		let R = document.getElementById('R').value;
+		let Current = V/R;
+		document.getElementById('OUTPUT').innerHTML = "The computed Current(I) is :" + Current;
+	}
+	function On(){
+		document.getElementById('bulb').src ="turnon.png";
+		document.getElementById('audio1').play();
+	}
+	function Off(){
+		document.getElementById('bulb').src ="turnoff.png";
+		document.getElementById('audio1').pause();
+
+	}
+</script><br>
+
+SOURCES:<br>
+<a href="https://www.electronics-notes.com/articles/basic_concepts/resistance/what-is-ohms-law-formula-equation.php">Undertsanding Ohm's Law </a><br>
+
+<a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-2/voltage-current-resistance-relate/">Ohm's Law- How Voltage, Current and Resistance Relate</a>
+
+</body>
+</html>
